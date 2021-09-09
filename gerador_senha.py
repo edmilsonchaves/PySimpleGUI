@@ -1,5 +1,13 @@
+# --------------------------------------------------------------------- #
+# Name: "Gerador de senha"
+# Version: "1.0.0"
+# Description: "Gerar e salvar senhas"
+# Author: edmilsonchaves
+# Language: pt-br
+# --------------------------------------------------------------------- #
+
 import PySimpleGUI as sg
-from random import choice, choices
+from random import choices
 import os
 
 
@@ -26,10 +34,10 @@ class Gerador_Senha:
                 break
             if evento == 'Limpar':
                 self.window.find_element('-LOG_EVENTOS-').update('')
-                self.window.find_element('-IN-SITE-SOFTWARE-').update('')
                 self.window.find_element('-USUARIO-').update('')
                 self.window.find_element('-TOTAL_CHARS-').update(1)
-
+                self.window.find_element('-IN-SITE-SOFTWARE-').update('')
+               
             if evento == 'Gerar senha':
                 nova_senha = self.gerar_senha(valores)
                 print(nova_senha)
